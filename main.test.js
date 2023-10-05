@@ -39,7 +39,7 @@ describe('Работа с валютами', () => {
             const amount = 80;
             const fromCurrency = 'RUB';
             const toCurrency = 'EUR';
-            const expectedAmount = 85;
+            const expectedAmount = 0.77;
             
             const con = new Converter()
             const result = con.exchange(amount, fromCurrency, toCurrency)
