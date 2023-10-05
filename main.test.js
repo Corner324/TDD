@@ -1,15 +1,16 @@
-const {Converter} = require("./main")
+const Converter = require('./main.js');
 
 describe('Работа с валютами', () => {
     describe('Обмен валют', () => {
         it('конвертируем 100 долларов в евро', () => {
+        console.log(typeof Converter)
         const amount = 100;
         const fromCurrency = 'USD';
         const toCurrency = 'EUR';
-        const expectedAmount = 85;
+        const expectedAmount = 95.12;
             
         const con = new Converter()
-        const result = con.exchange(mount, fromCurrency, toCurrency)
+        const result = con.exchange(amount, fromCurrency, toCurrency)
     
         expect(result).toBe(expectedAmount);
         });
@@ -17,10 +18,10 @@ describe('Работа с валютами', () => {
             const amount = 70;
             const fromCurrency = 'USD';
             const toCurrency = 'EUR';
-            const expectedAmount = 85;
+            const expectedAmount = 66.59;
             
             const con = new Converter()
-            const result = con.exchange(mount, fromCurrency, toCurrency)
+            const result = con.exchange(amount, fromCurrency, toCurrency)
         
             expect(result).toBe(expectedAmount);
         });
@@ -28,10 +29,10 @@ describe('Работа с валютами', () => {
             const amount = 100;
             const fromCurrency = 'EUR';
             const toCurrency = 'USD';
-            const expectedAmount = 85;
+            const expectedAmount = 105.13;
             
             const con = new Converter()
-            const result = con.exchange(mount, fromCurrency, toCurrency)
+            const result = con.exchange(amount, fromCurrency, toCurrency)
         
             expect(result).toBe(expectedAmount);
         });
@@ -42,7 +43,7 @@ describe('Работа с валютами', () => {
             const expectedAmount = 85;
             
             const con = new Converter()
-            const result = con.exchange(mount, fromCurrency, toCurrency)
+            const result = con.exchange(amount, fromCurrency, toCurrency)
         
             expect(result).toBe(expectedAmount);
         });
@@ -53,7 +54,9 @@ describe('Работа с валютами', () => {
             const сurrency = 'EUR';
             const expectedAmount = [20,30,40];
 
+            const con = new Converter()
             const result = con.predict(сurrency)
+
             expect(result).toBe(expectedAmount);
 
         });
