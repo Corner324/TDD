@@ -3,7 +3,6 @@ const Converter = require('./main.js');
 describe('Работа с валютами', () => {
     describe('Обмен валют', () => {
         it('конвертируем 100 долларов в евро', () => {
-        console.log(typeof Converter)
         const amount = 100;
         const fromCurrency = 'USD';
         const toCurrency = 'EUR';

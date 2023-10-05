@@ -10,12 +10,16 @@ class Converter{
     exchange(amount, fromCurrency, toCurrency){
         if(toCurrency === "EUR"){
             this.resEur = (amount * 1000) / this.courses[fromCurrency]
-            return Math.round(this.resEur * 100) / 100
+            return Math.round(this.resEur * 100) / 100 
         }
-        else if(toCurrency != "EUR"){
-            this.resEur = amount * 1000 / this.courses[fromCurrency]
-            //console.log(this.courses[toCurrency])
+        else {
+            console.log(amount)
+            this.resEur = (amount * 1000) / this.courses[fromCurrency]
+            this.result = this.resEur * 1000 * this.courses[toCurrency] / 1000
+            return Math.round(this.result * 100) / 100 
         }
+
+ 
     }
     predict(){
 
