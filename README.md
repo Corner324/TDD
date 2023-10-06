@@ -1,6 +1,7 @@
 # TDD
 
 The program is written according to the **TDD** (Test Driven Development) methodology using the **AAA** approach to testing, the software is designed to convert the exchange rate with the possibility of linear extrapolation of the further rate, at the moment work is implemented with the following currencies:
+
 - USD
 - EUR
 - RUB
