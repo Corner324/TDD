@@ -46,6 +46,17 @@ describe('Работа с валютами', () => {
         
             expect(result).toBe(expectedAmount);
         });
+        it('конвертируем 30 долларов в рубли', () => {
+            const amount = 30;
+            const fromCurrency = 'USD';
+            const toCurrency = 'RUB';
+            const expectedAmount = 2976.44;
+            
+            const con = new Converter()
+            const result = con.exchange(amount, fromCurrency, toCurrency)
+        
+            expect(result).toBe(expectedAmount);
+        });
     })
 
     describe('Предсказание курса', () => {

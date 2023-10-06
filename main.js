@@ -30,28 +30,15 @@ class Converter{
         }
         else {
             this.resEur = (amount * 1000) / this.courses[fromCurrency]
-            this.result = this.resEur * 1000 * this.courses[toCurrency] / 1000
+            this.result = this.resEur * this.courses[toCurrency] / 1000
             return Math.round(this.result * 100) / 100 
         }
     }
     predict(fromCurrency, toCurrency){
         for(const course of this.historyCourses[fromCurrency]){
-            if(toCurrency === "EUR"){
-                this.resEur = (1000 * 1000) / course 
-                this.history.push(Math.round(this.resEur * 100) / 100)
-            }
-            else if(fromCurrency === "EUR"){
-                this.resEur = 1000
-                this.result = this.resEur * this.courses[toCurrency] / 1000
-                return Math.round(this.result * 100) / 100 
-            }
-            else {
-                this.resEur = (1000 * 1000) / this.courses[fromCurrency]
-                this.result = this.resEur * 1000 * this.courses[toCurrency] / 1000
-                return Math.round(this.result * 100) / 100 
-            }
+            this.resEur = (1000 * 1000) / course 
+            this.history.push(Math.round(this.resEur * 100) / 100)
         }
-        console.log(this.history)
         let predNum = this.linearExtrapolation(1, this.history.pop(), 2, this.history.pop(), 3)
         return Math.round(predNum * 100) / 100
         
