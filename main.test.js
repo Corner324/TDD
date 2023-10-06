@@ -49,12 +49,13 @@ describe('Работа с валютами', () => {
     })
 
     describe('Предсказание курса', () => {
-        it('предсказываем дальнейший курс евро', () => {
-            const сurrency = 'EUR';
-            const expectedAmount = [20,30,40];
+        it('предсказываем дальнейший курс 1000 рублей к евро', () => {
+            const fromCurrency = 'RUB';
+            const toCurrency = 'EUR';
+            const expectedAmount = 10.47;
 
             const con = new Converter()
-            const result = con.predict(сurrency)
+            const result = con.predict(fromCurrency, toCurrency)
 
             expect(result).toBe(expectedAmount);
 
